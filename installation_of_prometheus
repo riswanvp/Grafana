@@ -1,0 +1,20 @@
+Download Prometheus (adjust version as needed)
+wget https://github.com/prometheus/prometheus/releases/latest/download/prometheus-*.tar.gz
+
+# Extract
+tar xvfz prometheus-*.tar.gz
+cd prometheus-*
+
+# Edit prometheus.yml to add your monitored server
+
+# Open prometheus.yml in editor, add this scrape config:
+
+scrape_configs:
+  - job_name: 'node_exporter'
+    static_configs:
+      - targets: ['IP_OF_TARGET_SERVER:9100']
+
+# Run Prometheus
+./prometheus --config.file=prometheus.yml
+
+and create a systemd service
