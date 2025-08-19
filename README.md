@@ -1,5 +1,5 @@
 # Grafana
-
+Install Grafana and Prometheus on Monitoring server
 
 
 Open Grafana web UI
